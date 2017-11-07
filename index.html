@@ -1176,7 +1176,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 0a96aacee6ec7fb12033b637c6bbb93364519b4c" name="generator">
+  <meta content="Bikeshed version 67155cabad72a8ab669a7d4421c90e2999a29b68" name="generator">
   <link href="https://www.w3.org/TR/permissions/" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1424,7 +1424,7 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
    <h1 class="p-name no-ref" id="title">Permissions</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2017-09-25">25 September 2017</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2017-11-07">7 November 2017</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1642,7 +1642,7 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
         the result of the following algorithm, which returns one of <code class="idl"><a data-link-type="idl" href="#dom-permissionstate-granted" id="ref-for-dom-permissionstate-granted①">"granted"</a></code>, <code class="idl"><a data-link-type="idl" href="#dom-permissionstate-prompt" id="ref-for-dom-permissionstate-prompt">"prompt"</a></code>, or <code class="idl"><a data-link-type="idl" href="#dom-permissionstate-denied" id="ref-for-dom-permissionstate-denied">"denied"</a></code>: </p>
       <ol class="algorithm">
        <li> If <var>settings</var> wasn’t passed, set it to the <a data-link-type="dfn" href="https://html.spec.whatwg.org/multipage/webappapis.html#current-settings-object" id="ref-for-current-settings-object">current settings object</a>. 
-       <li> If <var>settings</var> is a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-context" id="ref-for-non-secure-context">non-secure context</a> and <code><var>descriptor</var>.<code class="idl"><a data-link-type="idl" href="#dom-permissiondescriptor-name" id="ref-for-dom-permissiondescriptor-name①">name</a></code></code> isn’t <a data-link-type="dfn" href="#allowed-in-non-secure-contexts" id="ref-for-allowed-in-non-secure-contexts">allowed in non-secure contexts</a>, then return <code class="idl"><a data-link-type="idl" href="#dom-permissionstate-denied" id="ref-for-dom-permissionstate-denied①">"denied"</a></code>. 
+       <li> If <var>settings</var> is a <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-contexts" id="ref-for-non-secure-contexts">non-secure context</a> and <code><var>descriptor</var>.<code class="idl"><a data-link-type="idl" href="#dom-permissiondescriptor-name" id="ref-for-dom-permissiondescriptor-name①">name</a></code></code> isn’t <a data-link-type="dfn" href="#allowed-in-non-secure-contexts" id="ref-for-allowed-in-non-secure-contexts">allowed in non-secure contexts</a>, then return <code class="idl"><a data-link-type="idl" href="#dom-permissionstate-denied" id="ref-for-dom-permissionstate-denied①">"denied"</a></code>. 
        <li> If there was a previous invocation of this algorithm with the same <var>descriptor</var> and <var>settings</var>, returning <var>previousResult</var>, and the UA has not received <a data-link-type="dfn" href="#new-information-about-the-users-intent" id="ref-for-new-information-about-the-users-intent">new information about
           the user’s intent</a> since that invocation, return <var>previousResult</var>. 
        <li>
@@ -1859,8 +1859,8 @@ pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em
     permission-related flags, algorithms, and types: </p>
     <dl>
      <dt>An <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="allowed-in-non-secure-contexts">allowed in non-secure contexts</dfn> flag
-     <dd> By default, only <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#secure-context" id="ref-for-secure-context">secure contexts</a> can use <a data-link-type="dfn" href="#powerful-feature" id="ref-for-powerful-feature⑨">powerful features</a>.
-      If this flag is set for a feature, the UA may grant access to it in <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-context" id="ref-for-non-secure-context①">non-secure contexts</a> too. 
+     <dd> By default, only <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#secure-contexts" id="ref-for-secure-contexts">secure contexts</a> can use <a data-link-type="dfn" href="#powerful-feature" id="ref-for-powerful-feature⑨">powerful features</a>.
+      If this flag is set for a feature, the UA may grant access to it in <a data-link-type="dfn" href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-contexts" id="ref-for-non-secure-contexts①">non-secure contexts</a> too. 
      <dt> A <dfn class="dfn-paneled" data-dfn-type="dfn" data-export="" id="permission-descriptor-type">permission descriptor type</dfn> 
      <dd>
       <p> <code class="idl"><a data-link-type="idl" href="#dictdef-permissiondescriptor" id="ref-for-dictdef-permissiondescriptor⑦">PermissionDescriptor</a></code> or one of its subtypes.
@@ -2276,20 +2276,10 @@ navigator.permissions.query({ name: 'notifications' }).then((result) => {
      <li><a href="https://www.w3.org/2001/tag/doc/promises-guide/#a-promise-rejected-with">a promise rejected with</a>
     </ul>
    <li>
-    <a data-link-type="biblio">[promises-guide-1]</a> defines the following terms:
-    <ul>
-     <li><a href="https://www.w3.org/2001/tag/doc/promises-guide/#a-promise-rejected-with">a promise rejected with</a>
-    </ul>
-   <li>
     <a data-link-type="biblio">[secure-contexts]</a> defines the following terms:
     <ul>
-     <li><a href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-context">non-secure context</a>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[secure-contexts-1]</a> defines the following terms:
-    <ul>
-     <li><a href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-context">non-secure context</a>
-     <li><a href="https://w3c.github.io/webappsec-secure-contexts/#secure-context">secure context</a>
+     <li><a href="https://w3c.github.io/webappsec-secure-contexts/#non-secure-contexts">non-secure contexts</a>
+     <li><a href="https://w3c.github.io/webappsec-secure-contexts/#secure-contexts">secure contexts</a>
     </ul>
    <li>
     <a data-link-type="biblio">[sensors]</a> defines the following terms:
@@ -2302,17 +2292,12 @@ navigator.permissions.query({ name: 'notifications' }).then((result) => {
      <li><a href="https://storage.spec.whatwg.org/#dom-permissionname-persistent-storage">"persistent-storage"</a>
     </ul>
    <li>
-    <a data-link-type="biblio">[ui-events-1]</a> defines the following terms:
-    <ul>
-     <li><a href="https://www.w3.org/TR/uievents/#user-agent">user agent</a>
-    </ul>
-   <li>
     <a data-link-type="biblio">[uievents]</a> defines the following terms:
     <ul>
      <li><a href="https://www.w3.org/TR/uievents/#user-agent">user agent</a>
     </ul>
    <li>
-    <a data-link-type="biblio">[web-bluetooth-1]</a> defines the following terms:
+    <a data-link-type="biblio">[web-bluetooth]</a> defines the following terms:
     <ul>
      <li><a href="https://webbluetoothcg.github.io/web-bluetooth/#dom-permissionname-bluetooth">"bluetooth"</a>
      <li><a href="https://webbluetoothcg.github.io/web-bluetooth/#dictdef-bluetoothlescanfilterinit">BluetoothLEScanFilterInit</a>
@@ -2348,33 +2333,35 @@ navigator.permissions.query({ name: 'notifications' }).then((result) => {
    <dd>Anne van Kesteren. <a href="https://storage.spec.whatwg.org/">Storage Standard</a>. Living Standard. URL: <a href="https://storage.spec.whatwg.org/">https://storage.spec.whatwg.org/</a>
    <dt id="biblio-uievents">[UIEVENTS]
    <dd>Gary Kacmarcik; Travis Leithead. <a href="https://www.w3.org/TR/uievents/">UI Events</a>. 4 August 2016. WD. URL: <a href="https://www.w3.org/TR/uievents/">https://www.w3.org/TR/uievents/</a>
+   <dt id="biblio-web-bluetooth">[WEB-BLUETOOTH]
+   <dd>Jeffrey Yasskin. <a href="https://webbluetoothcg.github.io/web-bluetooth/">Web Bluetooth</a>. Draft Community Group Report. URL: <a href="https://webbluetoothcg.github.io/web-bluetooth/">https://webbluetoothcg.github.io/web-bluetooth/</a>
    <dt id="biblio-webidl">[WebIDL]
    <dd>Cameron McCormack; Boris Zbarsky; Tobie Langel. <a href="https://heycam.github.io/webidl/">Web IDL</a>. 15 December 2016. ED. URL: <a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a>
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
    <dt id="biblio-accelerometer">[ACCELEROMETER]
-   <dd>Anssi Kostiainen; Alexander Shalamov. <a href="https://www.w3.org/TR/accelerometer/">Accelerometer</a>. 14 August 2017. WD. URL: <a href="https://www.w3.org/TR/accelerometer/">https://www.w3.org/TR/accelerometer/</a>
+   <dd>Anssi Kostiainen; Alexander Shalamov. <a href="https://www.w3.org/TR/accelerometer/">Accelerometer</a>. 18 October 2017. WD. URL: <a href="https://www.w3.org/TR/accelerometer/">https://www.w3.org/TR/accelerometer/</a>
    <dt id="biblio-ambient-light">[AMBIENT-LIGHT]
-   <dd>Anssi Kostiainen; Tobie Langel. <a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a>. 14 August 2017. WD. URL: <a href="https://www.w3.org/TR/ambient-light/">https://www.w3.org/TR/ambient-light/</a>
+   <dd>Anssi Kostiainen; Tobie Langel. <a href="https://www.w3.org/TR/ambient-light/">Ambient Light Sensor</a>. 18 October 2017. WD. URL: <a href="https://www.w3.org/TR/ambient-light/">https://www.w3.org/TR/ambient-light/</a>
    <dt id="biblio-audio-output">[AUDIO-OUTPUT]
-   <dd>Justin Uberti; Guido Urdaneta. <a href="https://www.w3.org/TR/audio-output/">Audio Output Devices API</a>. 15 December 2016. WD. URL: <a href="https://www.w3.org/TR/audio-output/">https://www.w3.org/TR/audio-output/</a>
+   <dd>Justin Uberti; Guido Urdaneta. <a href="https://www.w3.org/TR/audio-output/">Audio Output Devices API</a>. 3 October 2017. CR. URL: <a href="https://www.w3.org/TR/audio-output/">https://www.w3.org/TR/audio-output/</a>
    <dt id="biblio-clipboard-apis">[CLIPBOARD-APIS]
-   <dd>Hallvord Steen. <a href="https://www.w3.org/TR/clipboard-apis/">Clipboard API and events</a>. 13 December 2016. WD. URL: <a href="https://www.w3.org/TR/clipboard-apis/">https://www.w3.org/TR/clipboard-apis/</a>
+   <dd>Gary Kacmarcik; Grisha Lyukshin; Hallvord Steen. <a href="https://www.w3.org/TR/clipboard-apis/">Clipboard API and events</a>. 29 September 2017. WD. URL: <a href="https://www.w3.org/TR/clipboard-apis/">https://www.w3.org/TR/clipboard-apis/</a>
    <dt id="biblio-geolocation-api">[geolocation-API]
    <dd>Andrei Popescu. <a href="https://www.w3.org/TR/geolocation-API/">Geolocation API Specification 2nd Edition</a>. 8 November 2016. REC. URL: <a href="https://www.w3.org/TR/geolocation-API/">https://www.w3.org/TR/geolocation-API/</a>
    <dt id="biblio-getusermedia">[GETUSERMEDIA]
-   <dd>Daniel Burnett; et al. <a href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and Streams</a>. 19 May 2016. CR. URL: <a href="https://www.w3.org/TR/mediacapture-streams/">https://www.w3.org/TR/mediacapture-streams/</a>
+   <dd>Daniel Burnett; et al. <a href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and Streams</a>. 3 October 2017. CR. URL: <a href="https://www.w3.org/TR/mediacapture-streams/">https://www.w3.org/TR/mediacapture-streams/</a>
    <dt id="biblio-gyroscope">[GYROSCOPE]
-   <dd>Anssi Kostiainen; Mikhail Pozdnyakov. <a href="https://www.w3.org/TR/gyroscope/">Gyroscope</a>. 14 August 2017. WD. URL: <a href="https://www.w3.org/TR/gyroscope/">https://www.w3.org/TR/gyroscope/</a>
+   <dd>Anssi Kostiainen; Mikhail Pozdnyakov. <a href="https://www.w3.org/TR/gyroscope/">Gyroscope</a>. 18 October 2017. WD. URL: <a href="https://www.w3.org/TR/gyroscope/">https://www.w3.org/TR/gyroscope/</a>
    <dt id="biblio-magnetometer">[MAGNETOMETER]
-   <dd>Anssi Kostiainen; Rijubrata Bhaumik. <a href="https://www.w3.org/TR/magnetometer/">Magnetometer</a>. 14 August 2017. WD. URL: <a href="https://www.w3.org/TR/magnetometer/">https://www.w3.org/TR/magnetometer/</a>
+   <dd>Anssi Kostiainen; Rijubrata Bhaumik. <a href="https://www.w3.org/TR/magnetometer/">Magnetometer</a>. 18 October 2017. WD. URL: <a href="https://www.w3.org/TR/magnetometer/">https://www.w3.org/TR/magnetometer/</a>
    <dt id="biblio-notifications">[NOTIFICATIONS]
    <dd>Anne van Kesteren. <a href="https://notifications.spec.whatwg.org/">Notifications API Standard</a>. Living Standard. URL: <a href="https://notifications.spec.whatwg.org/">https://notifications.spec.whatwg.org/</a>
    <dt id="biblio-push-api">[PUSH-API]
-   <dd>Peter Beverloo; et al. <a href="https://www.w3.org/TR/push-api/">Push API</a>. 23 August 2017. WD. URL: <a href="https://www.w3.org/TR/push-api/">https://www.w3.org/TR/push-api/</a>
+   <dd>Peter Beverloo; et al. <a href="https://www.w3.org/TR/push-api/">Push API</a>. 26 October 2017. WD. URL: <a href="https://www.w3.org/TR/push-api/">https://www.w3.org/TR/push-api/</a>
    <dt id="biblio-web-background-sync">[WEB-BACKGROUND-SYNC]
-   <dd><a href="https://wicg.github.io/BackgroundSync/spec/">Web Background Synchronization specification draft</a>. Living Standard. URL: <a href="https://wicg.github.io/BackgroundSync/spec/">https://wicg.github.io/BackgroundSync/spec/</a>
+   <dd><a href="https://wicg.github.io/BackgroundSync/spec/">Web Background Synchronization</a>. Living Standard. URL: <a href="https://wicg.github.io/BackgroundSync/spec/">https://wicg.github.io/BackgroundSync/spec/</a>
    <dt id="biblio-webmidi">[WEBMIDI]
    <dd>Chris Wilson; Jussi Kalliokoski. <a href="https://www.w3.org/TR/webmidi/">Web MIDI API</a>. 17 March 2015. WD. URL: <a href="https://www.w3.org/TR/webmidi/">https://www.w3.org/TR/webmidi/</a>
   </dl>
